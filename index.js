@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const routes = require("./routes");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -36,7 +36,9 @@ mongoose.connect(process.env.mongo_url, {
 
 mongoose.connection.once("open", function() {
   console.log("connected to db...");
-  app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+  app.listen(port, () =>
+    console.log(`Link shortener listening on port ${port}!`)
+  );
 });
 
 app.use(express.static(__dirname + "/views"));
