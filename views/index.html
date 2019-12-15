@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <title>Link Shortener</title>
+  </head>
+  <body class="has-background-black" style="height: 100vh">
+    <section class="section">
+      <div class="container">
+        <div class="columns is-mobile is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title has-text-white">
+              Milan's cool url shortener
+            </h1>
+            <h2 class="has-text-white subtitle">Shorten your links</h2>
+            <div class="box has-background-dark">
+              <form id="linkForm">
+                <div class="field has-addons" style="margin-bottom: 10px">
+                  <div class="control is-expanded">
+                    <input
+                      type="text"
+                      placeholder="Your link"
+                      class="input"
+                      id="urlInput"
+                    />
+                  </div>
+                  <div class="control">
+                    <button id="submit" class="is-info button" type="submit">
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </form>
+              <div
+                class="notification is-primary"
+                id="newLinkNotification"
+                style="display:none"
+              >
+                <button class="delete"></button>
+                <p id="newLink"></p>
+              </div>
+            </div>
+            <div id="links" class="box has-background-dark"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./submit.js"></script>
+    <script src="./links.js"></script>
+  </body>
+</html>
